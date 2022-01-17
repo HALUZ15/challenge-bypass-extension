@@ -7,9 +7,5 @@ export function HcaptchaButton(): JSX.Element {
         chrome.tabs.create({ url: 'https://www.hcaptcha.com/privacy-pass' });
     };
 
-    return (
-        <PassButton value={0} onClick={openHomePage}>
-            hCaptcha
-        </PassButton>
-    );
+    return <PassButton value={0} onClick={openHomePage}>hCaptcha</PassButton>;
 }

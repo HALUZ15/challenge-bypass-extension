@@ -130,13 +130,10 @@ export class CloudflareProvider implements Provider {
 
         const headers = {
             'content-type': 'application/x-www-form-urlencoded',
-            [ISSUE_HEADER_NAME]: CloudflareProvider.ID.toString(),
+            [ISSUE_HEADER_NAME]: CloudflareProvider.ID,
         };
 
-        const response = await axios.post<string, { data: string }>(url, body, {
-            headers,
-            responseType: 'text',
-        });
+        const response = await axios.post<string>(url, body, { headers, responseType: 'text' });
 
         const { signatures } = qs.parse(response.data);
         if (signatures === undefined) {

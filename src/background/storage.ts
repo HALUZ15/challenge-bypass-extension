@@ -6,11 +6,11 @@ export class LocalStorage {
     }
 
     getItem(key: string): string | null {
-        return window.localStorage.getItem(`${this.prefix}-${key}`);
+        return window.localStorage.getItem(`${this.prefix}-${key}`)
     }
 
     setItem(key: string, value: string): void {
-        window.localStorage.setItem(`${this.prefix}-${key}`, value);
+        window.localStorage.setItem(`${this.prefix}-${key}`, value)
     }
 }
 
